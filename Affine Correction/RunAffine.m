@@ -1,6 +1,4 @@
 %% Initialization and Parameters
-close all,
-clear all,
 tic,
 InitMovieFiles,
 
