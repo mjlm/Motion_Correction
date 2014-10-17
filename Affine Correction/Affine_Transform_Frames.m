@@ -47,12 +47,13 @@ for j=1:length(acqFrames)
     t.close();
     
     %Scale for seamless intensity transitions
-    meanfirstframes=median(mean(mean(mov(:,:,1:200))));
+    frameOverlap = min(200, round(size(mov, 3)/4));
+    meanfirstframes=median(mean(mean(mov(:,:,1:frameOverlap))));
     if j==1
         meanlastframes = meanfirstframes;
     end
     mov=mov*(meanlastframes/meanfirstframes);
-    meanlastframes=median(mean(mean(mov(:,:,end-200:end))));
+    meanlastframes=median(mean(mean(mov(:,:,end-frameOverlap:end))));
     
     % Apply affine transform
     parfor frame = 1:Z

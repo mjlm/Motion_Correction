@@ -1,4 +1,3 @@
-
 function [xshifts,yshifts,correlation_thresholds]=track_subpixel_wholeframe_motion_varythresh(movref,refframe,maxshift,correlation_threshold,min_samples)
 %[xshifts,yshifts]=track_subpixel_wholeframe_motion(movref,refframenum,maxshift);
 %find the offsets (xshifts,yshifts) of the movie given by movref
